@@ -115,8 +115,8 @@ int do_fork()
 
   /* Find a free pid for the child and put it in the table. */
   new_pid = get_free_pid();
-  rmc->mp_pid = new_pid;                          /* assign pid to child */
-  printf("Minix: PID %d created\n", rmp->mp_pid); //lab2 task
+  rmc->mp_pid = new_pid; /* assign pid to child */
+  // printf("Minix: PID %d created\n", rmp->mp_pid); //lab2 task
 
   memset(&m, 0, sizeof(m));
   m.m_type = VFS_PM_FORK;
@@ -212,7 +212,7 @@ int do_srv_fork()
   /* Find a free pid for the child and put it in the table. */
   new_pid = get_free_pid();
   rmc->mp_pid = new_pid;                          /* assign pid to child */
-  printf("Minix: PID %d created\n", rmp->mp_pid); //lab2 task
+  // printf("Minix: PID %d created\n", rmp->mp_pid); //lab2 task
   memset(&m, 0, sizeof(m));
   m.m_type = VFS_PM_SRV_FORK;
   m.VFS_PM_ENDPT = rmc->mp_endpoint;
@@ -364,7 +364,7 @@ int dump_core;                                                          /* flag 
    */
   rmp->mp_flags &= (IN_USE | VFS_CALL | PRIV_PROC | TRACE_EXIT | PROC_STOPPED);
   rmp->mp_flags |= EXITING;
-  printf("Minix: PID %d exited\n", rmp->mp_pid); // lab2 task
+  // printf("Minix: PID %d exited\n", rmp->mp_pid); // lab2 task
 
   /* Keep the process around until VFS is finished with it. */
 
